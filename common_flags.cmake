@@ -90,6 +90,7 @@ target_compile_options(maidsafe_common
                  # Disabled due to boost bug https://svn.boost.org/trac/boost/ticket/7663.
         /wd4996  # Disable C4996 'Function call with parameters that may be unsafe' caused by boost signals2.
                  # Disabled as per advice at https://svn.boost.org/trac/boost/wiki/Guidelines/WarningsGuidelines.
+        /wd4819  # Disable C4819 'C4819 occurs when an ANSI source file is compiled on a system with a codepage that cannot represent all characters in the file.
         $<$<CONFIG:Release>:
             /O2  # Optimise code for maximum speed.  Implies the following:
                  #      Og (global optimisations)
