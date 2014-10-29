@@ -76,7 +76,7 @@ target_compile_options(maidsafe_common
   PUBLIC
     $<$<BOOL:${MSVC}>:
         /W4      # Set warning level 4.
-        /WX      # Treat warnings as errors.
+        #/WX      # Treat warnings as errors.
         /MP7     # Enable multi-processor compilation (max 7).
         /EHsc    # Catches C++ exceptions only and tells the compiler to assume that extern C functions never throw a C++ exception.
         /TP      # Treat sources as C++.
@@ -128,7 +128,7 @@ target_compile_options(maidsafe_common
         -Werror
         -Wall
         -Wextra
-        -Wunused-parameter
+        #-Wunused-parameter
         -Wno-system-headers
         -Wno-deprecated
         -Wwrite-strings
