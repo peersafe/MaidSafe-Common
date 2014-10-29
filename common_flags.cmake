@@ -125,10 +125,10 @@ target_compile_options(maidsafe_common
     $<$<BOOL:${UNIX}>:
         -std=c++11
         -W
-        -Werror
+        #-Werror
         -Wall
         -Wextra
-        #-Wunused-parameter
+        -Wunused-parameter
         -Wno-system-headers
         -Wno-deprecated
         -Wwrite-strings
