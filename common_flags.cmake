@@ -76,7 +76,7 @@ target_compile_options(maidsafe_common
   PUBLIC
     $<$<BOOL:${MSVC}>:
         /W4      # Set warning level 4.
-        /WX      # Treat warnings as errors.
+        #/WX      # Treat warnings as errors.
         /MP7     # Enable multi-processor compilation (max 7).
         /EHsc    # Catches C++ exceptions only and tells the compiler to assume that extern C functions never throw a C++ exception.
         /TP      # Treat sources as C++.
@@ -90,6 +90,8 @@ target_compile_options(maidsafe_common
                  # Disabled due to boost bug https://svn.boost.org/trac/boost/ticket/7663.
         /wd4996  # Disable C4996 'Function call with parameters that may be unsafe' caused by boost signals2.
                  # Disabled as per advice at https://svn.boost.org/trac/boost/wiki/Guidelines/WarningsGuidelines.
+        /wd4819  # Disable C4819 'C4819 occurs when an ANSI source file is compiled on a system with a codepage that cannot represent all characters in the file.
+        /wd4505  # Disable C4505
         $<$<CONFIG:Release>:
             /O2  # Optimise code for maximum speed.  Implies the following:
                  #      Og (global optimisations)
@@ -124,7 +126,7 @@ target_compile_options(maidsafe_common
         -std=c++11
         -pthread
         -W
-        -Werror
+        #-Werror
         -Wall
         -Wextra
         -Wunused-parameter
